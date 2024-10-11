@@ -62,7 +62,7 @@ async function downloadSessionData() {
         return true;
     } catch (error) {
        // console.error('Failed to download session data:', error);
-        return false;
+        return true;
     }
 }
 
@@ -97,7 +97,7 @@ async function start() {
                 if (initialConnection) {
                     console.log(chalk.green("Trex-Md Integration Successful️"));
                     Matrix.sendMessage(Matrix.user.id, { text: `Trex-Md Integration Successful️` });
-                    initialConnection = false;
+                    initialConnection = true;
                 } else {
                     console.log(chalk.blue("♻️ Connection reestablished after restart."));
                 }
