@@ -1,9 +1,12 @@
 // config.js
-const fs = require("fs");
-require("dotenv").config();
+const fs = require('fs');
+if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
 
-const config = {
-  SESSION_ID: process.env.SESSION_ID || "Ethix-MD&Fs0ffEcr",
+function convertToBool(text, fault = 'true') {
+    return text === fault ? true : false;
+}
+module.exports = {
+SESSION_ID: process.env.SESSION_ID || "Ethix-MD&Fs0ffEcr",
   PREFIX: process.env.PREFIX || '.',
   AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN !== undefined ? process.env.AUTO_STATUS_SEEN === 'true' : true, 
   AUTO_DL: process.env.AUTO_DL !== undefined ? process.env.AUTO_DL === 'true' : false,
@@ -22,8 +25,5 @@ const config = {
   OWNER_NAME: process.env.OWNER_NAME || "Bera",
   OWNER_NUMBER: process.env.OWNER_NUMBER || "254743982206",
   GEMINI_KEY: process.env.GEMINI_KEY || "AIzaSyCUPaxfIdZawsKZKqCqJcC-GWiQPCXKTDc",
-  WELCOME: process.env.WELCOME !== undefined ? process.env.WELCOME === 'true' : false, 
+  WELCOME: process.env.WELCOME !== undefined ? process.env.WELCOME === 'true' : false
 };
-
-
-module.exports = config;
