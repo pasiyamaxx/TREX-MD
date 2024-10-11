@@ -3,7 +3,7 @@ PLEASE SUBSCRIBE RAHUL TECH YOUTUBE CHANNEL
 */
 const config = `
 HANDLERS=.
-SESSION_ID="your_session_ID"
+SESSION_ID="Ethix-MD&1ViYCm25"
 SUDO=your_WhatsApp_number
 WORK_TYPE=private
 `;
